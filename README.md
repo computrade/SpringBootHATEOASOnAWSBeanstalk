@@ -1,30 +1,30 @@
 
-In this sample I want to deploy a sample Spring Boot application which expose ReST servicesusing AWS Elastic Beanstalk / S2 / RDS.
+###Spring Boot on AWS Beanstalk
 
-Java Server side:
+In this sample I want to deploy a sample Spring Boot application which expose ReST services using AWS Elastic Beanstalk / S2 / RDS.
 
-The sample application is a very simple Spring Boot-based application that leverages the spring-data and spring-data-rest projects and use MySQL for data persitancy. 
+**Java Server side:**
+
+The sample application is a very simple Spring Boot-based application that leverages the spring-data and spring-data-rest projects and use MySQL for data persistency. 
 
 The application exposes a REST-based API with features such as pagination, JSON Hypertext Application Language (HAL), Application-Level Profile Semantics (ALPS), and Hypermedia as the Engine of Application State (HATEOAS). 
-The idea of hypermedia-driven interface is how you can discover all the RESTful endpoints using curl (or whatever REST client you are using). There is no need to exchange a formal contract or interface document with your customers.
+The idea of hypermedia-driven interface is how you can discover all RESTful endpoints using curl (or whatever REST client you are using). There is no need to exchange a formal contract or interface document with your customers.
 
-This application has defined two model:
+This application has defined two models:
 1. “Person” with the following properties: id, firstName, and lastName.
-2. "Picutre" with the following properties: id, url, and metadata.
+2. "Picture" with the following properties: id, url, and metadata.
 
-Rest also exposes end points to find a “Person” by last name.(“findByLastName.”) and a function to find a “Picture” by metadata. (“findByMetadata.”)
-
-
-AWS side:
-
+ReST also exposes end points to find a “Person” by last name.(“findByLastName.”) and a end point to find a “Picture” by metadata. (“findByMetadata.”)
+**AWS side:**
 S3 bucket was used to store some pictures object into it.
 Elastic Beanstalk was used to deploy a Java web applications based on Spring Boot.
-RDS to create mySQL DB for my application data persistancy.
+RDS was used to create mySQL DB for my application data persistency.
 
 
 Sample ReST Call:
 
-All available REST end point can be self investigated using the application base URL:
+All available REST end points can be self investigated using the application base URL:
+```
 curl -X GET -i http://yuvalishay-test.us-east-2.elasticbeanstalk.com/
 
 {
@@ -43,26 +43,31 @@ curl -X GET -i http://yuvalishay-test.us-east-2.elasticbeanstalk.com/
     }
 }
 
-create new poeple:
-curl -X POST -H "Content-Type: application/json" -d '{ "firstName": "Yuval", "lastName": "Ishay" }' http://yuvalishay-test.us-east-2.elasticbeanstalk.com/people
+```
 
-get all poeple:
-curl -X GET http://springbooteb-web-prod.us-east-1.elasticbeanstalk.com/people
-query specific people:
-curl -X GET http://springbooteb-web-prod.us-east-1.elasticbeanstalk.com/people/1
-query by Last Name:
-curl -X GET http://springbooteb-web-prod.us-east-1.elasticbeanstalk.com/people/search/findByLastName?name=Ishay
+**People ReST samples:**
+*Create new people:
+`curl -X POST -H "Content-Type: application/json" -d '{ "firstName": "Yuval", "lastName": "Ishay" }' http://yuvalishay-test.us-east-2.elasticbeanstalk.com/people`
 
-create new picture:
-curl -X POST -H "Content-Type: application/json" -d '{ "url": "https://s3.us-east-2.amazonaws.com/somatix-test/success.jpg", "metadata": "Success" }' http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture
+*Get all people:
+`curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/people`
+*Query specific people:
+`curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/people/1`
+*Query by Last Name:
+`curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/people/search/findByLastName?name=Ishay`
 
-Get all picture:
-curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture/
-Query specific picture:
-curl -X GET http://springbooteb-web-prod.us-east-1.elasticbeanstalk.com/picture/1
-Query by metadata:
-curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture/search/findByMetadata?metadata=Yes
+**Pictures ReST samples:**
+*Create new picture:
+`curl -X POST -H "Content-Type: application/json" -d '{ "url": "https://s3.us-east-2.amazonaws.com/somatix-test/success.jpg", "metadata": "Success" }' http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture`
 
-You can also issue PUT, PATCH, and DELETE REST calls to either replace, update, or delete existing records.
+*Get all pictures:
+`curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture/`
+*Query specific picture:
+`curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture/1`
+*Query by metadata:
+`curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture/search/findByMetadata?metadata=Yes`
+
+**You can also issue PUT, PATCH, and DELETE REST calls to either replace, update, or delete existing records.**
+
 
 
