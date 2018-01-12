@@ -1,5 +1,5 @@
 
-###Spring Boot on AWS Beanstalk
+### Spring Boot on AWS Beanstalk
 
 In this sample I want to deploy a sample Spring Boot application which expose ReST services using AWS Elastic Beanstalk / S2 / RDS.
 
@@ -46,25 +46,39 @@ curl -X GET -i http://yuvalishay-test.us-east-2.elasticbeanstalk.com/
 ```
 
 **People ReST samples:**
-*Create new people:
+
+Create new people:
+
 `curl -X POST -H "Content-Type: application/json" -d '{ "firstName": "Yuval", "lastName": "Ishay" }' http://yuvalishay-test.us-east-2.elasticbeanstalk.com/people`
 
-*Get all people:
+Get all people:
+
 `curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/people`
-*Query specific people:
+
+Query specific people:
+
 `curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/people/1`
-*Query by Last Name:
+
+Query by Last Name:
+
 `curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/people/search/findByLastName?name=Ishay`
 
 **Pictures ReST samples:**
-*Create new picture:
+
+Create new picture:
+
 `curl -X POST -H "Content-Type: application/json" -d '{ "url": "https://s3.us-east-2.amazonaws.com/somatix-test/success.jpg", "metadata": "Success" }' http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture`
 
-*Get all pictures:
+Get all pictures:
+
 `curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture/`
-*Query specific picture:
+
+Query specific picture:
+
 `curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture/1`
-*Query by metadata:
+
+Query by metadata:
+
 `curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture/search/findByMetadata?metadata=Yes`
 
 **You can also issue PUT, PATCH, and DELETE REST calls to either replace, update, or delete existing records.**
