@@ -75,8 +75,10 @@ Get all pictures:
 
 Query specific picture:
 
-```curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture/4
+`curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture/4`
 
+Response:
+```
 {
     "url": "https://s3.us-east-2.amazonaws.com/somatix-test/success.jpg",
     "metadata": "Success",
@@ -88,9 +90,10 @@ Query specific picture:
             "href": "http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture/4"
         }
     }
-}```
+}
+```
 
-The URL returned is a picture uploaded to AWS S3 - here it is:
+The URL returned is a picture which was uploaded to AWS S3 - here it is:
 
 ![Image from AWS S3](https://s3.us-east-2.amazonaws.com/somatix-test/success.jpg)
 
