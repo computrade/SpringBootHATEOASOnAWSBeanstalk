@@ -75,8 +75,7 @@ Get all pictures:
 
 Query specific picture:
 
-```curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture/4`
-
+```curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture/4
 
 {
     "url": "https://s3.us-east-2.amazonaws.com/somatix-test/success.jpg",
