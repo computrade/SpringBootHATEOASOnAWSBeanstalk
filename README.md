@@ -54,7 +54,7 @@ Create new people:
 
 `curl -X POST -H "Content-Type: application/json" -d '{ "firstName": "Yuval", "lastName": "Ishay" }' http://yuvalishay-test.us-east-2.elasticbeanstalk.com/people`
 
-Get all people:
+Get all peoples:
 
 `curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/people`
 
@@ -66,7 +66,7 @@ Query by Last Name:
 
 `curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/people/search/findByLastName?name=Ishay`
 
-**Pictures ReST samples:**
+**Picture ReST samples:**
 
 Create new picture:
 
