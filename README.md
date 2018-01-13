@@ -14,12 +14,13 @@ This application has defined two models:
 1. “Person” with the following properties: id, firstName, and lastName.
 2. "Picture" with the following properties: id, url, and metadata.
 
-ReST also exposes end points to find a “Person” by last name.(“findByLastName.”) and a end point to find a “Picture” by metadata. (“findByMetadata.”)
-**AWS side:**
-S3 bucket was used to store some pictures object into it.
-Elastic Beanstalk was used to deploy a Java web applications based on Spring Boot.
-RDS was used to create mySQL DB for my application data persistency.
+ReST also exposes end points to find a “Person” by last name (“findByLastName”) and another end point to find a “Picture” by metadata. (“findByMetadata”) - see sample below.
 
+**AWS side:**
+
+**Elastic Beanstalk** was used to deploy a Java web applications based on Spring Boot.
+**RDS** was used to create mySQL DB for my application data persistency.
+**S3** bucket was used to store some pictures object into it.
 
 Sample ReST Call:
 
