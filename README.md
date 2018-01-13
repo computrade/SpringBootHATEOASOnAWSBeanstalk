@@ -19,6 +19,8 @@ ReST also exposes end points to find a “Person” by last name (“findByLastN
 **AWS side:**
 
   *Elastic Beanstalk* was used to deploy a Java web applications based on Spring Boot.
+  
+  *ACM - AWS Certificate Manager* was used to create a certificate.
 
   *RDS* was used to create mySQL DB for my application data persistency.
 
@@ -105,6 +107,15 @@ Query by metadata:
 `curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture/search/findByMetadata?metadata=Success`
 
 **You can also issue PUT, PATCH, and DELETE REST calls to either replace, update, or delete existing records.**
+
+*ACM - AWS Certificate Manager* was used to create a certificate.
+
+For this sample the certificate was issued to DNS of www.computrade.co.il:
+![Certificate image from AWS S3](https://s3.us-east-2.amazonaws.com/somatix-test/AWS-computrade-certificate.JPG)
+
+The certificate was not added to my "beanstalk" application, because it is not match the DNS.
+It could be easily added by:
+MyBeansTalk application => Configuration => Network Tier => Load Balancing => SSL certificate ID.
 
 
 
