@@ -18,13 +18,13 @@ ReST also exposes end points to find a “Person” by last name (“findByLastN
 
 **AWS side:**
 
-**Elastic Beanstalk** was used to deploy a Java web applications based on Spring Boot.
+  *Elastic Beanstalk* was used to deploy a Java web applications based on Spring Boot.
 
-**RDS** was used to create mySQL DB for my application data persistency.
+  *RDS* was used to create mySQL DB for my application data persistency.
 
-**S3** bucket was used to store some pictures object into it.
+  *S3* bucket was used to store some pictures object into it.
 
-Sample ReST Call:
+**Sample ReST Calls:**
 
 All available REST end points can be self investigated using the application base URL:
 ```
