@@ -106,7 +106,7 @@ Query by metadata:
 
 `curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/picture/search/findByMetadata?metadata=Success`
 
-**You can also issue PUT, PATCH, and DELETE REST calls to either replace, update, or delete existing records.**
+You can also issue **PUT, PATCH, and DELETE** REST calls to either replace, update, or delete existing records.
 
 
 **HTTPS Support:**
