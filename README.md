@@ -60,7 +60,7 @@ Get all people:
 
 Query specific people:
 
-`curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/people/1`
+`curl -X GET http://yuvalishay-test.us-east-2.elasticbeanstalk.com/people/2`
 
 Query by Last Name:
 
