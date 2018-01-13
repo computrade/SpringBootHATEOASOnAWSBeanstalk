@@ -108,6 +108,9 @@ Query by metadata:
 
 **You can also issue PUT, PATCH, and DELETE REST calls to either replace, update, or delete existing records.**
 
+
+**HTTPS Support:**
+
 *ACM - AWS Certificate Manager* was used to create a certificate.
 
 For this sample the certificate was issued to DNS of www.computrade.co.il:
